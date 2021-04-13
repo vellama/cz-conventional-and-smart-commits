@@ -1,4 +1,4 @@
-# cz-conventional-and-smart
+# [WIP] cz-conventional-and-smart
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
@@ -13,6 +13,10 @@ A commitizen adapter that handle both:
 
 - convential change logs
 - JIRA smart commits
+
+## WIP
+
+!!!! THIS IS STILL A WORK IN PROGRESS !!!!
 
 ## Installation
 
