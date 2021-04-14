@@ -210,9 +210,14 @@ export default (options: OptionsType) => {
         {
           type: 'list',
           name: 'ticketStatus',
-          message: 'Update ticket status (optional):\n',
+          message: 'Update ticket status:\n',
           choices: ticketWorkflowChoices,
           when: (answers: any) => answers.shouldUpdateStatus
+        },
+        {
+          type: 'input',
+          name: 'ticketComment',
+          message: 'Ticket Comment (optional)'
         }
       ]).then(function (answers: any) {
         const wrapOptions = {
@@ -248,9 +253,16 @@ export default (options: OptionsType) => {
           ? `#${slugify(answers.ticketStatus, {
               lower: true
             })}`
-          : ''
+          : undefined
+        const ticketComment = answers.ticketComment
+          ? `#${answers.ticketComment}`
+          : undefined
 
-        const smartCommitPayload = filter([ticketStatus, timeSpent]).join(' ')
+        const smartCommitPayload = filter([
+          ticketStatus,
+          timeSpent,
+          ticketComment
+        ]).join(' ')
 
         const commitPayload = filter([
           head,

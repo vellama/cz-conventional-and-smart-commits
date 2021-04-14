@@ -12,7 +12,7 @@
 A commitizen adapter that handle both:
 
 - convential change logs
-- JIRA smart commits
+- JIRA smart commits (workflow transition, time spent, comment)
 
 ## WIP
 
@@ -32,14 +32,14 @@ Reference it through your .czrc or .cz.json file
 
 ```json
 {
-  "path": "node_modules/cz-conventional-and-smart"
+  "path": "node_modules/cz-conventional-and-smart-commits"
 }
 ```
 
 or use commitizen init
 
 ```sh
-commitizen init cz-conventional-and-smart
+commitizen init cz-conventional-and-smart-commits
 ```
 
 ## Sources
