@@ -23,7 +23,7 @@ A commitizen adapter that handle both:
 ### Install with npm
 
 ```sh
-npm i --save-exact --save-dev cz-conventional-and-smart
+npm i --save-exact --save-dev cz-conventional-and-smart-commits
 ```
 
 ### Link to commitizen
