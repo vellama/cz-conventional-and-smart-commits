@@ -1,11 +1,11 @@
 {
-  "name": "cz-conventional-and-smart",
+  "name": "cz-conventional-and-smart-commits",
   "version": "1.0.0",
   "description": "A commitizen adapter that handle both conventional change logs and JIRA smart commits",
   "main": "dist/index.js",
   "scripts": {
-    "src:build": "npm run lint && tsc",
-    "src:watch": "npm run lint && tsc -w",
+    "src:build": "npm run lint:fix && tsc",
+    "src:watch": "npm run lint:fix && tsc -w",
     "lint": "eslint . --ext .js,.ts",
     "lint:fix": "eslint . --ext .js,.ts --fix",
     "test": "NODE_PATH=test/ jest --roots test -runInBand --detectOpenHandles"
@@ -35,9 +35,13 @@
     "commitizen": "4.2.3",
     "conventional-commit-types": "3.0.0",
     "inquirer": "8.0.0",
+    "lodash": "4.17.21",
+    "longest": "2.0.1",
+    "slugify": "1.5.0",
     "word-wrap": "1.2.3"
   },
   "devDependencies": {
+    "@types/lodash": "4.14.168",
     "@typescript-eslint/eslint-plugin": "4.22.0",
     "@typescript-eslint/parser": "4.22.0",
     "eslint": "7.24.0",
@@ -47,6 +51,7 @@
     "eslint-plugin-prettier": "3.3.1",
     "eslint-plugin-promise": "5.1.0",
     "jest": "26.6.3",
-    "prettier-config-standard": "4.0.0"
+    "prettier-config-standard": "4.0.0",
+    "typescript": "4.2.4"
   }
 }

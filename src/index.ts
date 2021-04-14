@@ -1,14 +1,17 @@
 'format esm'
+// @ts-ignore
 import { configLoader } from 'commitizen'
 import commitLintLoad from '@commitlint/load'
 
 import { OptionsType } from './types/options.types'
 import { commitTypes } from './data/commit-types.data'
 import engine from './lib/engine'
+import { ticketWorkflow } from './data/ticket-workflow.data'
 
 const config = configLoader.load() || {}
 const options: OptionsType = {
   types: config.types || commitTypes,
+  ticketWorkflow: config.ticketWorkflow || ticketWorkflow,
   defaultType: process.env.CZ_TYPE || config.defaultType,
   defaultScope: process.env.CZ_SCOPE || config.defaultScope,
   defaultSubject: process.env.CZ_SUBJECT || config.defaultSubject,
@@ -39,7 +42,8 @@ const options: OptionsType = {
           typeof maxHeaderLengthRule === 'object' &&
           maxHeaderLengthRule.length >= 3 &&
           !process.env.CZ_MAX_HEADER_WIDTH &&
-          !config.maxHeaderWidth
+          !config.maxHeaderWidth &&
+          maxHeaderLengthRule[2]
         ) {
           options.maxHeaderWidth = maxHeaderLengthRule[2]
         }
