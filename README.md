@@ -45,5 +45,7 @@ commitizen init cz-conventional-and-smart-commits
 ## Sources
 
 - [commitizen/cz-cli](https://github.com/commitizen/cz-cli)
+- [commitizen/cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
 - [commitizen/cz-jira-smart-commit](https://github.com/commitizen/cz-jira-smart-commit)
 - [pvdlg/conventional-changelog-metahub](https://github.com/pvdlg/conventional-changelog-metahub)
+- [digitalroute/cz-conventional-changelog-for-jira](https://github.com/digitalroute/cz-conventional-changelog-for-jira)

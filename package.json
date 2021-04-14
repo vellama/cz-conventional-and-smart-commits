@@ -31,6 +31,7 @@
   "homepage": "https://github.com/vellama/cz-conventional-and-smart#readme",
   "dependencies": {
     "@commitlint/cli": "12.1.1",
+    "boxen": "5.0.1",
     "chalk": "4.1.0",
     "commitizen": "4.2.3",
     "conventional-commit-types": "3.0.0",

@@ -1,6 +1,7 @@
 'format esm'
 
 import wrap from 'word-wrap'
+import boxen from 'boxen'
 import chalk from 'chalk'
 // @ts-ignore
 import longest from 'longest'
@@ -219,7 +220,7 @@ export default (options: OptionsType) => {
           name: 'ticketComment',
           message: 'Ticket Comment (optional)'
         }
-      ]).then(function (answers: any) {
+      ]).then(async function (answers: any) {
         const wrapOptions = {
           trim: true,
           cut: false,
@@ -272,7 +273,24 @@ export default (options: OptionsType) => {
           smartCommitPayload
         ]).join('\n\n')
 
-        commit(commitPayload)
+        console.log()
+        console.log(chalk.underline('Commit preview:'))
+        console.log(
+          boxen(chalk.green(commitPayload), { padding: 1, margin: 1 })
+        )
+
+        const { confirmCommit } = await cz.prompt([
+          {
+            type: 'confirm',
+            name: 'confirmCommit',
+            message: 'is your commit ok ?',
+            default: false
+          }
+        ])
+
+        if (confirmCommit) {
+          commit(commitPayload)
+        }
       })
     }
   }
