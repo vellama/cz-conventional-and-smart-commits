@@ -109,8 +109,8 @@ export default (options: OptionsType) => {
             return filteredSubject.length === 0
               ? 'subject is required'
               : filteredSubject.length <= maxSummaryLength(options, answers)
-              ? true
-              : 'Subject length must be less than or equal to ' +
+                ? true
+                : 'Subject length must be less than or equal to ' +
                 maxSummaryLength(options, answers) +
                 ' characters. Current length is ' +
                 filteredSubject.length +
