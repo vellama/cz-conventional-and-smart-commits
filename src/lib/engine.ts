@@ -260,17 +260,18 @@ export default (options: OptionsType) => {
           : undefined
 
         const smartCommitPayload = filter([
+          issues,
           ticketStatus,
           timeSpent,
           ticketComment
         ]).join(' ')
 
         const commitPayload = filter([
+          smartCommitPayload,
           head,
           body,
           breaking,
-          issues,
-          smartCommitPayload
+          issues
         ]).join('\n\n')
 
         console.log()
