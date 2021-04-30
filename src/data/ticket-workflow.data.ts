@@ -14,5 +14,9 @@ export const ticketWorkflow: { [key: string]: ChoiceDetails } = {
   done: {
     title: 'Done',
     description: 'Work has finished on the issue.'
+  },
+  inReview: {
+    title: 'En Review',
+    description: 'This issue is ready for review'
   }
 }
